@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 
-from . views import welcome
+from . views import welcome, SignUpView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'logout$',
         LogoutView.as_view(),
         name="logout"),
+    url(r'signup$', SignUpView.as_view(), name='signup'),
     # url(r'signup$', SignUpView.as_view(), name='signup'),
     url(r'^volunteer/', include('volunteer_admin.urls')),
     url(r'^page/', include('frontend.urls')),

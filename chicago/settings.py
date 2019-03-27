@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'volunteer_admin',
     'frontend',
-    'widget_tweaks'
+    'widget_tweaks',
+    'crud'
 ]
 
 MIDDLEWARE = [
@@ -117,3 +118,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+LOGIN_REDIRECT_URL = 'welcome'

@@ -2,4 +2,10 @@ venv
 static
 .idea
 .env
+db.sqlite3
+
+### Django ###
+*.log
+*.pot
 *.pyc
+__pycache__/

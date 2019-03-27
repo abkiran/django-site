@@ -11,20 +11,17 @@
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Register to start</p>
 
-            <form action="{% url 'login' %}" method="post">
+            <form action="{% url 'signup' %}" method="post">
                 {% csrf_token %}
                 {% include 'includes/form.html' %}
                 <div class="col-4">
-                    <input value="Sign In" type="submit" class="btn btn-primary btn-block btn-flat">
+                    <input value="Sign Up" type="submit" class="btn btn-primary btn-block btn-flat">
                 </div>
             </form>
-            <p class="mb-1">
-                <a href="#">I forgot my password</a>
-            </p>
             <p class="mb-0">
-                <a href="{% url 'signup' %}" class="text-center">Register a new membership</a>
+                <a href="{% url 'login' %}" class="text-center">Login</a>
             </p>
         </div>
         <!-- /.login-card-body -->
