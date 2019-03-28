@@ -13,5 +13,5 @@ def welcome(request):
 
 class SignUpView(CreateView):
     form_class = UserCreationForm
-    template_name = "auth/register.html"
+    template_name = "registration/register.html"
     success_url = reverse_lazy('welcome')

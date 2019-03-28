@@ -13,22 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url
+from django.urls import include, path
 from django.contrib import admin
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import views
 
 from . views import welcome, SignUpView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'login$',
-        LoginView.as_view(template_name="auth/login.html"),
-        name="login"),
-    url(r'logout$',
-        LogoutView.as_view(),
-        name="logout"),
+    # Auth
+    url(r'login$', views.LoginView.as_view(), name="login"),
+    url(r'logout$', views.LogoutView.as_view(), name="logout"),
     url(r'signup$', SignUpView.as_view(), name='signup'),
-    # url(r'signup$', SignUpView.as_view(), name='signup'),
+    path('password-reset/', views.PasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+
     url(r'^volunteer/', include('volunteer_admin.urls')),
     url(r'^page/', include('frontend.urls')),
     url(r'^$', welcome, name="welcome")

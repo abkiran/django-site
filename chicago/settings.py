@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'volunteer_admin',
     'frontend',
     'widget_tweaks',
+    'crispy_forms',
     'crud'
 ]
 
@@ -120,3 +121,5 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_REDIRECT_URL = 'welcome'
+
+CRISPY_TEMPLATE_PACK =  'bootstrap4'

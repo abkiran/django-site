@@ -20,8 +20,13 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
-    {% block content %}
-    {% endblock %}
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="/"><b>Django</b>LTE</a>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
     <!-- jQuery -->
     <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
     <!-- Bootstrap 4 -->
