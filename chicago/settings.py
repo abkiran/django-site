@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'volunteer_admin',
+    'volunteer',
     'frontend',
     'widget_tweaks',
     'crispy_forms',
