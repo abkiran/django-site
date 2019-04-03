@@ -7,6 +7,8 @@ urlpatterns = [
     # Auth
     path('accounts/', include('accounts.urls')),
 
+    url('volunteer/crud/', include('crud.urls'), name="volunteer_admin"),
+
     path('volunteer', include('volunteer.urls'), name="volunteer_admin"),
     path('volunteer/', include('volunteer.urls'), name="volunteer_admin"),
 

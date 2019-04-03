@@ -1,0 +1,49 @@
+{% extends "vadmin.html" %}
+
+{% block content %}
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Languages</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tbody><tr>
+                                <th style="width: 10px">#</th>
+                                <th>Language</th>
+                                <th>Actions</th>
+                            </tr>
+                            {% for row in object_list %}
+                            <tr>
+                                <td>{{ row.id }}</td>
+                                <td>{{ row.language }}</td>
+                                <td>
+                                    <a  href="{% url "language_detail"  row.id  %}">details</a>
+                                    <a  href="{% url "language_update"  row.id  %}">edit</a>
+                                    <a  href="{% url "language_delete"  row.id  %}">delete</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody></table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer clearfix">
+                        <ul class="pagination pagination-sm m-0 float-right">
+                            <li class="page-item"><a class="page-link" href="#">«</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+{% endblock content %}

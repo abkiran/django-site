@@ -126,21 +126,9 @@ LOGIN_REDIRECT_URL = 'welcome'
 
 CRISPY_TEMPLATE_PACK =  'bootstrap4'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+# Email config
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'abkiranreddy@gmail.com'
+EMAIL_HOST_PASSWORD = 'soft3_kk'
